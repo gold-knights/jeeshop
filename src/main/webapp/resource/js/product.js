@@ -193,6 +193,7 @@ function addToCart(){
 	  dataType: "json",
 	  error:function(e){
 		  console.log("加入购物车失败！请联系站点管理员。异常:"+e);
+		  alert("hello");
 		  $("#addToCartBtn").attr("data-original-title","加入购物车失败！请联系客服寻求解决办法。").tooltip('show');
 	  }
 	});
