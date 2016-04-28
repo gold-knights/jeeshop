@@ -46,10 +46,11 @@ div.zoomMask{position:absolute;background:url("<%=request.getContextPath() %>/re
 	<div class="tb-booth tb-pic tb-s310">
 		<c:forEach items="${e.productImageList}" var="item" varStatus="vs">
 		  <c:if test="${vs.index == 0 }">
-		    <a href="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image3}" />">
-				<img src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image2}" />" 
-				rel="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image3}" />" 
-				class="jqzoom" />  </a>
+		    <a href="<c:out escapeXml="false" value="${item.image3}" />">
+				<img src="<c:out escapeXml="false" value="${item.image2}" />"
+				rel="<c:out escapeXml="false" value="${item.image3}" />"
+				class="jqzoom" />
+			</a>
 		  </c:if>
 		</c:forEach>
 	</div>
@@ -65,9 +66,9 @@ div.zoomMask{position:absolute;background:url("<%=request.getContextPath() %>/re
 		   </c:otherwise>
 		 </c:choose>
 		    <div class="tb-pic tb-s40" style="width: 50px;height: 50px;">    
-					<a href="#"><img style="max-width: 50px;max-height: 50px;" src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image1}" />" 
-					mid="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image2}" />" 
-					big="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${item.image3}" />"></a>
+					<a href="#"><img style="max-width: 50px;max-height: 50px;" src="<c:out escapeXml="false" value="${item.image1}" />"
+					mid="<c:out escapeXml="false" value="${item.image2}" />"
+					big="<c:out escapeXml="false" value="${item.image3}" />"></a>
 				</div>
 			</li>
 		</c:forEach>

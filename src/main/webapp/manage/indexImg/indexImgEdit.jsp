@@ -35,8 +35,8 @@
 					<input type="text" id="picture" name="picture" value="${e.picture}" ccc="imagesInput" 
 					style="width: 600px;" data-rule="图片地址:required;picture;" />
 					<c:if test="${e.picture !=null }">
-						<a target="_blank" href="<%=SystemManager.systemSetting.getImageRootPath()%>/..<c:out value="${e.picture}" />">
-							<img style="max-width: 50px;max-height: 50px;" alt="" src="<%=SystemManager.systemSetting.getImageRootPath()%>/..<c:out value="${e.picture}" />">
+						<a target="_blank" href="<c:out value="${e.picture}" />">
+							<img style="max-width: 50px;max-height: 50px;" alt="" src="<c:out value="${e.picture}" />">
 						</a>
 					</c:if>
 				</td>

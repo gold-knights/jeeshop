@@ -28,7 +28,6 @@ background-color: #d1d1d1;display: none;height: 30px;z-index: 9999;font-size: 18
 		</div>
 	</div>
 	
-	<span id="pifeSpan" class="input-group-addon" style="display:none"><%=SystemManager.systemSetting.getImageRootPath()%></span>
 	<input type="hidden" value="<c:out value="${e.id}"/>" id="productID" name="id"/>
 	<input type="hidden" value="<c:out value="${e.catalogID }"/>" id="catalogID"/>
 
@@ -135,9 +134,9 @@ background-color: #d1d1d1;display: none;height: 30px;z-index: 9999;font-size: 18
 									<input type="text" id="picture" name="picture" value="${e.picture}" ccc="imagesInput" style="width: 600px;" 
 									data-rule="小图;required;maxPicture;"/>
 									<c:if test="${e.picture!=null}">
-										<a target="_blank" href="<%=SystemManager.systemSetting.getImageRootPath()%><c:out value="${e.picture}" />">
+										<a target="_blank" href="<c:out value="${e.picture}" />">
 											<img style="max-width: 50px;max-height: 50px;" alt="" 
-											src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out value="${e.picture}" />">
+											src="<c:out value="${e.picture}" />">
 										</a>
 									</c:if>
 								</td>
@@ -388,13 +387,12 @@ $(function() {
 });
 //删除图片主路径
 function clearRootImagePath(picInput){
-	var _pifeSpan = $("#pifeSpan").text();
 	var _imgVal = picInput.val();
 	console.log("1===>_imgVal = "+_imgVal);
 	//if(_imgVal && _imgVal.length>0 && _imgVal.indexOf(_pifeSpan)==0){
 		//picInput.val(_imgVal.substring(_pifeSpan.length));
 		console.log("2===>"+_imgVal.indexOf("/attached/"));
-		picInput.val(_imgVal.substring(_imgVal.indexOf("/attached/")));
+		picInput.val(_imgVal);
 		
 	//}
 }
@@ -508,7 +506,7 @@ KindEditor.ready(function(K) {
 		editor.loadPlugin('filemanager', function() {
 			editor.plugin.filemanagerDialog({
 				viewType : 'VIEW',
-				dirName : 'image',
+				dirName : '',
 				clickFn : function(url, title) {
 					//K('#picture').val(url);
 					//alert(url);

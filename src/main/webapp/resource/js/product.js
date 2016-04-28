@@ -159,8 +159,8 @@ function notifyCart(_obj){
 
 //加入购物车
 function addToCart(){
-	var _specIdHidden = $("#specIdHidden").val();
-	var specJsonStringVal = $("#specJsonString").val();
+	var _specIdHidden = 3.1;
+	var specJsonStringVal = "白色";
 	//如果规格存在
 	console.log("specIdHidden = " + _specIdHidden);
 	if(specJsonStringVal && specJsonStringVal.length>0){
@@ -173,7 +173,7 @@ function addToCart(){
 	if(!checkStockFunc()){
 		return false;
 	}
-	var _url = "cart!addToCart.action?productID="+$("#productID").val()+"&buyCount="+$("#inputBuyNum").val()+"&buySpecID="+$("#specIdHidden").val();
+	var _url = "http://127.0.0.1:8080/cart123/addToCart.action?productID="+$("#productID").val()+"&buyCount="+$("#inputBuyNum").val()+"&buySpecID="+_specIdHidden;
 	$.ajax({
 	  type: 'POST',
 	  url: _url,

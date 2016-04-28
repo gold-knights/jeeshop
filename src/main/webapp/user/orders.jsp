@@ -95,8 +95,8 @@ font-weight: 700;font-size: 16px;color: #f50;
 										<tr>
 											<td>&nbsp;
 												<div style="width:50px;height: 50px;border: 0px solid;float: left;margin-left: 20px;">
-													<a href="<%=request.getContextPath() %>/product/<c:out value="${innerOrd.productID}" />.html" target="_blank" title="<c:out value="${innerOrd.productName}" />">
-														<img style="width: 100%;height: 100%;border: 0px;" alt="" src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out value="${innerOrd.picture}" />" onerror="nofind()"/>
+													<a href="<%=request.getContextPath() %>/product/<c:out value="${innerOrd.productID}" />.html" target="_blank" title="<c:out value="简约沙发" />">
+														<img style="width: 100%;height: 100%;border: 0px;" alt="" src="http://xufang1.oss-cn-hangzhou.aliyuncs.com/%E6%B2%99%E5%8F%912.png"  onerror="nofind()"/>
 													</a>
 												</div>
 												<div style="float: left;">&nbsp;<c:out value="${innerOrd.productName}" /></div>

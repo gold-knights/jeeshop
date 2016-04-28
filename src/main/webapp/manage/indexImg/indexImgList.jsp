@@ -52,9 +52,9 @@
 						<td style="display: none;">&nbsp;<c:out value="${indexImg.id}"/></td>
 						<td>&nbsp;<c:out value="${indexImg.title}"/></td>
 						<td>&nbsp;
-							<a href="<%=SystemManager.systemSetting.getImageRootPath() %><c:out value="${indexImg.picture}"/>" target="_blank">
+							<a href="<c:out value="${indexImg.picture}"/>" target="_blank">
 								<img style="max-width: 100px;max-height: 100px;" alt="" 
-								src="<%=SystemManager.systemSetting.getImageRootPath() %><c:out value="${indexImg.picture}"/>">
+								src="<c:out value="${indexImg.picture}"/>">
 							</a>
 							<br>
 							<div>图片链接：</div>

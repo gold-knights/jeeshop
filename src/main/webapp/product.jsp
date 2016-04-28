@@ -443,10 +443,7 @@ function defaultProductImg(){
 									</div>
 								</form>
 								<br>
-								<%application.setAttribute("qqHelpHtml", ss2.getQqHelpHtml()); %>
-								<c:out escapeXml="false" value="${applicationScope.qqHelpHtml}"/>
-								<hr style="margin-top: 5px;margin-bottom: 5px;">
-								
+
 								<c:choose>
 								  <c:when test="${e.stock <= 0 }">
 								    <strong><font style="font-size: 14px;" class="text-danger">抱歉，该商品已售卖完了！</font></strong><br>
@@ -559,7 +556,7 @@ $(function() {
 		//规格被点击，则标记选中和不选中
 		$("#specDiv li").click(function(){
 			console.log("规格被点击。" + $(this).hasClass("specSelectCss"));
-			if($(this).hasClass("specNotAllowed")){
+				if($(this).hasClass("specNotAllowed")){
 				console.log("由于规格被禁用了，直接返回。");
 				return;
 			}

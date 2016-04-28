@@ -23,43 +23,6 @@
 	<%@ include file="/indexMenu.jsp"%>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-4" style="background-color:#fff;border:0px;">
-				<div id="advert" style="text-align: right;">
-<%-- 					<%@ include file="/advert/advert_register_page.jsp"%> --%>
-
-					<div style="margin-top: 100px;text-align: right;font-weight: 600" >
-						<div class="panel panel-default">
-							<div class="panel-heading">也可以这样登陆：</div>
-						  <div class="panel-body">
-						    
-						    
-						    <div>
-								<a href="<%=request.getContextPath() %>/user/qqLogin.html" title="使用QQ号登陆">
-			              		<img src="<%=SystemManager.systemSetting.getWww()%>/resource/images/qqLogin.png">
-			              	</a>
-							</div>
-			              	<br>
-	              	
-			              	<div>
-				              	<a  href="<%=request.getContextPath() %>/user/sinawb.html" title="使用新浪微博账号登陆">
-				              		<img src="<%=SystemManager.systemSetting.getWww()%>/resource/images/sinawbLogin.png">
-				              	</a>
-			              	</div>
-			              	<br>
-	              	
-			              	<div>
-				              	<a href="alipayFastLogin.html" title="使用支付宝快捷登陆">
-									<img src="<%=SystemManager.systemSetting.getWww() %>/resource/images/alipay_fastlogin.jpg" alt="支付宝快捷登陆">
-								</a>
-			              	</div>
-							<br>
-					
-						  </div>
-						</div>
-					</div>
-					
-				</div>
-			</div>		
 			<div class="col-xs-8">
 				<div class="row">
 					<div class="col-md-12" style="font-size: 14px;font-weight: normal;margin-left: 50px;">
@@ -118,18 +81,7 @@
 				    </div>
 				  </div>
 				  
-				  <div class="form-group">
-				    <label for="vcode" class="col-md-2 control-label">验证码</label>
-				    <div class="col-md-2">
-					    <input type="text" name="vcode" type="text" class="form-control" id="vcode" placeholder="验证码" 
-					    data-rule="验证码:required;vcode;remote[${ctx}/user/unique.html]" size="4" maxlength="4" />
-				    </div>
-				    <div class="col-md-6" style="float: right;">
-				    	<img src="<%=SystemManager.systemSetting.getWww() %>/ValidateImage.do" id="codes2" 
-								onclick="javaScript:reloadImg2();" class="vcodeCss"></img>
-				    </div>
-				  </div>
-				  
+
 				  <div class="form-group">
 				    <div class="col-md-offset-2 col-md-6">
 				      <button type="submit" class="btn btn-success btn-sm" value="注 册">
@@ -137,14 +89,7 @@
 				      </button>
 				    </div>
 				  </div>
-				  
-				  <div class="form-group">
-				    <label for="email" class="col-md-2 control-label">注册协议</label>
-				    <div class="col-md-6">
-				    	<a target="_blank" class="form-control" href="<%=SystemManager.systemSetting.getWww() %>/help/zcxy.html">《myshop用户注册协议》</a>
-				    </div>
-				  </div>
-				  
+
 				</form>
 			</div>
 			</div>
@@ -153,7 +98,7 @@
 <%@ include file="/resource/common_html_validator.jsp"%>
 <script type="text/javascript">
 function reloadImg2() {
-	document.getElementById("codes2").src = "<%=SystemManager.systemSetting.getWww() %>/ValidateImage.do?" + "radom="
+	document.getElementById("codes2").src = "http://127.0.0.1:8080/ValidateImage.do?" + "radom="
 			+ Math.random();
 	$("#vcode2").focus();
 }
