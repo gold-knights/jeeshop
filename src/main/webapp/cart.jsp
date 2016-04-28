@@ -47,7 +47,7 @@
 			<div class="row">
 				<div class="col-xs-12" style="border: 0px solid;text-align: left;">
 					<c:choose>
-						<c:when test="${sessionScope.myCart!=null and sessionScope.myCart.productList.size!=0}">
+						<c:when test="${sessionScope.myCart!=null and sessionScope.myCart.productList.size()!=0}">
 						   <h3 style="font-weight: bold;">购物车中的商品</h3>
 						<hr style="margin: 0px;margin-bottom: 10px;">
 						<table id="result_table" class="table table-bordered">
