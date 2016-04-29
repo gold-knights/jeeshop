@@ -173,7 +173,7 @@ function addToCart(){
 	if(!checkStockFunc()){
 		return false;
 	}
-	var _url = "http://127.0.0.1:8080/cart123/addToCart.action?productID="+$("#productID").val()+"&buyCount="+$("#inputBuyNum").val()+"&buySpecID="+_specIdHidden;
+	var _url = "http://localhost:8081/cart123/addToCart.action?productID=" + $("#productID").val() + "&buyCount=" + $("#inputBuyNum").val() + "&buySpecID=" + _specIdHidden;
 	$.ajax({
 	  type: 'POST',
 	  url: _url,
@@ -201,7 +201,7 @@ function addToCart(){
 
 //最后一次检查库存
 function checkStockLastTime(){
-	var _url = "cart/checkStockLastTime.html?radom="+Math.random();
+	var _url = "/cart/checkStockLastTime.html?radom=" + Math.random();
 	console.log("_url="+_url);
 	var result;
 	$.ajax({

@@ -1,14 +1,4 @@
-<%@page import="net.jeeshop.core.front.SystemManager"%>
-<%@page import="net.jeeshop.services.front.product.bean.Product"%>
-<%@page import="net.jeeshop.services.front.product.ProductService"%>
-<%@page
-	import="org.springframework.web.context.support.WebApplicationContextUtils"%>
-<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <!-- tyy2 -->
-<%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="java.util.*"%>
-<%@page import="net.jeeshop.services.front.news.bean.News"%>
-<%@page import="net.jeeshop.core.FrontContainer"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <!-- tyy -->
 <%@ taglib uri="http://jsptags.com/tags/navigation/pager" prefix="pg"%>
@@ -722,7 +712,7 @@ function resetProductInfo(){
 
 //去购物车结算
 function toCart(){
-	window.location.href = "<%=SystemManager.systemSetting.getWww()%>/cart/cart.html";
+	window.location.href = "${ctx}/cart/cart.html";
 }
 var options={
 		animation:true,
