@@ -173,13 +173,12 @@ function addToCart(){
 	if(!checkStockFunc()){
 		return false;
 	}
-	var _url = "http://127.0.0.1:8080/cart123/addToCart.action?productID="+$("#productID").val()+"&buyCount="+$("#inputBuyNum").val()+"&buySpecID="+_specIdHidden;
+	var _url = "http://localhost:8080/cart123/addToCart.action?productID="+$("#productID").val()+"&buyCount="+$("#inputBuyNum").val()+"&buySpecID="+_specIdHidden;
 	$.ajax({
 	  type: 'POST',
 	  url: _url,
 	  data: {},
 	  success: function(data){
-		  console.log("data="+data);
 		if(data==0){
 			$("#addToCartBtn").attr("data-original-title",data.tips).tooltip('destroy');
 			$('#myModal').modal('toggle');

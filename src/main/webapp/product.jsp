@@ -326,11 +326,6 @@ function defaultProductImg(){
 										</ul>
 									</c:when>
 									<c:otherwise>
-										<ul class="list-group">
-											<li class="list-group-item">
-												活动已经结束！
-											</li>
-										</ul>
 									</c:otherwise>
 									</c:choose>
 									
