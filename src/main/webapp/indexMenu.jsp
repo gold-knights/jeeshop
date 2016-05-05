@@ -88,16 +88,16 @@ body{
 						</div>
 					</div>
 				</form>
-				<div style="text-align: left;margin-top: 5px;">热门搜索：
-					<%
-						application.setAttribute("hotqueryList", SystemManager.hotqueryList);
-					%>
-					 <c:forEach items="${applicationScope.hotqueryList}" var="hotQuery" >  
-					 	<a class="hotSearch" href="<c:out value="${hotQuery.url}"/>" target="_blank">
-							<c:out  value="${hotQuery.key1}"/>
-						</a>
-					 </c:forEach>
-				</div>
+				<%--<div style="text-align: left;margin-top: 5px;">热门搜索：--%>
+					<%--<%--%>
+						<%--application.setAttribute("hotqueryList", SystemManager.hotqueryList);--%>
+					<%--%>--%>
+					 <%--<c:forEach items="${applicationScope.hotqueryList}" var="hotQuery" >  --%>
+					 	<%--<a class="hotSearch" href="<c:out value="${hotQuery.url}"/>" target="_blank">--%>
+							<%--<c:out  value="${hotQuery.key1}"/>--%>
+						<%--</a>--%>
+					 <%--</c:forEach>--%>
+				<%--</div>--%>
 			</div>
 			<div class="col-xs-3" style="height: 100%;">
 		    	<div class="row" style="height: 100%;">
