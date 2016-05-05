@@ -263,6 +263,7 @@ function defaultProductImg(){
 					</c:forEach>
 					</div>
 					<c:if test="${ productList==null or productList.size==0 }">
+
 						抱歉，没有找到<font color='#f40'><%=request.getAttribute("key")!=null?request.getAttribute("key").toString():"" %></font>相关的宝贝!
 						<%request.setAttribute("key",null); %>
 						<br>
