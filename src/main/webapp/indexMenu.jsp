@@ -1,14 +1,13 @@
-<%@page import="net.jeeshop.services.front.systemSetting.bean.SystemSetting"%>
-<%@page import="net.jeeshop.web.action.front.orders.CartInfo"%>
-<%@page import="net.jeeshop.services.front.product.bean.Product"%>
 <%@page import="net.jeeshop.core.FrontContainer"%>
+<%@page import="net.jeeshop.core.front.SystemManager" %>
 <%@page import="net.jeeshop.services.front.catalog.bean.Catalog"%>
-<%@page import="java.util.List"%>
+<%@page import="net.jeeshop.services.front.systemSetting.bean.SystemSetting" %>
+<%@page import="net.jeeshop.web.action.front.orders.CartInfo" %>
 <%@page import="org.apache.commons.lang.StringUtils"%>
+<%@page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@page import="net.jeeshop.core.front.SystemManager"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<c:set var="ctx" value="${request.getContextPath()}"/>
 <%
 	//如果网站关闭，则访问包含有菜单的页面会提示站点关闭的信息。这个不和404页面冲突。各自报各自的错误。
 SystemSetting ss2 = SystemManager.systemSetting;
@@ -184,10 +183,10 @@ body{
 	          		<!-- 首页 -->
 					<c:choose>
 						<c:when test="${sessionScope.selectMenu == ''}">
-						   <li class="active"><a href="http://localhost:8080"><b>首页</b></a></li>
+							<li class="active"><a href="<%=request.getContextPath()%>/"><b>首页</b></a></li>
 						</c:when>
 						<c:otherwise>
-						  <li><a href="http://localhost:8080"><b>首页</b></a></li>
+							<li><a href="<%=request.getContextPath()%>/"><b>首页</b></a></li>
 						</c:otherwise>
 					</c:choose>
 					<!-- 类别作为菜单显示 -->

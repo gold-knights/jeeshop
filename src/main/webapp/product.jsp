@@ -712,7 +712,7 @@ function resetProductInfo(){
 
 //去购物车结算
 function toCart(){
-	window.location.href = "${ctx}/cart/cart.html";
+	window.location.href = "/cart/cart.html";
 }
 var options={
 		animation:true,
