@@ -179,6 +179,7 @@ function addToCart(){
 	  url: _url,
 	  data: {},
 	  success: function(data){
+		  console.log("data="+data);
 		if(data==0){
 			$("#addToCartBtn").attr("data-original-title",data.tips).tooltip('destroy');
 			$('#myModal').modal('toggle');
@@ -200,7 +201,7 @@ function addToCart(){
 
 //最后一次检查库存
 function checkStockLastTime(){
-	var _url = "cart/checkStockLastTime.html?radom="+Math.random();
+	var _url = "/cart/checkStockLastTime.html?radom=" + Math.random();
 	console.log("_url="+_url);
 	var result;
 	$.ajax({

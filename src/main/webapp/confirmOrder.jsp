@@ -1,14 +1,4 @@
-<%@page import="net.jeeshop.core.util.TokenUtil"%>
-<%@page import="net.jeeshop.core.front.SystemManager"%>
-<%@page import="net.jeeshop.services.front.product.bean.Product"%>
-<%@page import="net.jeeshop.services.front.product.ProductService"%>
-<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
-<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <!-- tyy2 -->
-<%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="java.util.*"%>
-<%@page import="net.jeeshop.services.front.news.bean.News"%>
-<%@page import="net.jeeshop.core.ManageContainer"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <!-- tyy -->
 <%@ taglib uri="http://jsptags.com/tags/navigation/pager" prefix="pg"%>
@@ -62,13 +52,12 @@
 						</a>
 					</li>
 					<li class="list-group-item">
-					
-					
-					
-					<c:if test="${sessionScope.myCart!=null and sessionScope.myCart.addressList.size!=0 }">
+
+
+						<c:if test="${sessionScope.myCart!=null and sessionScope.myCart.addressList.size()!=0 }">
 						<c:choose>
-						
-						<c:when test="${sessionScope.myCart!=null and sessionScope.myCart.addressList.size!=0 }">
+
+							<c:when test="${sessionScope.myCart!=null and sessionScope.myCart.addressList.size()!=0 }">
 							<div class="row">
 								<div class="col-xs-12" style="line-height: 20px;" id="adressListDiv">
 									<c:forEach items="${sessionScope.myCart.addressList}" var="addr">
@@ -76,7 +65,8 @@
 									     <c:when test="${addr.id == sessionScope.myCart.defaultAddessID }">
 									        <div address="address" class="col-xs-3 alert alert-info" style="border: 1px solid;text-align: left;margin-right: 10px;width: 200px;line-height: 20px;cursor: pointer;">
 												<c:out value="${addr.name}" escapeXml="false"/>,<c:out escapeXml="false" value="${addr.phone}"/>
-												<input type="radio" name="${e.selectAddressID}" checked="checked"  value="<c:out escapeXml="false" value="${addr.id}"/>"/>
+												<input type="radio" name="selectAddressID" checked="checked"
+													   value="<c:out escapeXml="false" value="${addr.id}"/>"/>
 												<br>
 												<c:out escapeXml="false" value="${addr.address}"/><br>
 											</div>
@@ -84,7 +74,8 @@
 									   	 <c:otherwise>
 									   	    <div address="address" class="col-xs-3 alert" style="border: 1px solid;text-align: left;margin-right: 10px;width: 200px;line-height: 20px;cursor: pointer;">
 												<c:out escapeXml="false" value="${addr.name}"/>,<c:out value="${addr.phone}" escapeXml="false"/>
-												<input type="radio" name="${e.selectAddressID}" value="<c:out escapeXml="false" value="${addr.id}"/>"/>
+												<input type="radio" name="selectAddressID"
+													   value="<c:out escapeXml="false" value="${addr.id}"/>"/>
 												<br>
 												<c:out value="${addr.address}" escapeXml="false"/><br>
 											</div>
@@ -126,7 +117,9 @@
 									<c:forEach items="${applicationScope.expressMap}" var="expre">
 										<tr style="cursor: pointer;">
 											<td width="400px">
-											<input type="radio" name="e.expressCode" value="<c:out escapeXml="false" value="${expre.key}" />" fee="<c:out escapeXml="false" value="${expre.value.fee}" />"/>
+												<input type="radio" name="expressCode"
+													   value="<c:out escapeXml="false" value="${expre.key}" />"
+													   fee="<c:out escapeXml="false" value="${expre.value.fee}" />"/>
 											<c:out escapeXml="false" value="${expre.value.name}" /></td>
 											<td><c:out escapeXml="false" value="${expre.value.fee}" /></td>
 										</tr>
@@ -217,7 +210,7 @@
 </div>
 <%@ include file="foot.jsp"%>
 
-<%-- <script type="text/javascript" src="<%=request.getContextPath() %>/resource/js/jquery-1.4.2.min.js"></script> --%>
+<script src="<%=request.getContextPath() %>/resource/js/product.js"></script>
 <script type="text/javascript">
 $(function() {
 	$("div[address=address]").click(function(){
