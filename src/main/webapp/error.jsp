@@ -62,13 +62,13 @@
         </div>
         
         <!-- Footer -->
-        <div id="da-footer">
-        	<div class="da-container clearfix">
-           	<p style="text-align: center;"><%=SystemManager.systemSetting.getIcp() %>
-						<a target="_blank" href="http://www.aliyun.com/"><img src="http://gtms01.alicdn.com/tps/i1/T1W6.aFbFbXXcZj_6s-96-18.png" alt="运行在阿里云" /></a>
-					</p>
-			</div>
-        </div>
+        <%--<div id="da-footer">--%>
+        	<%--<div class="da-container clearfix">--%>
+           	<%--<p style="text-align: center;"><%=SystemManager.systemSetting.getIcp() %>--%>
+						<%--<a target="_blank" href="http://www.aliyun.com/"><img src="http://gtms01.alicdn.com/tps/i1/T1W6.aFbFbXXcZj_6s-96-18.png" alt="运行在阿里云" /></a>--%>
+					<%--</p>--%>
+			<%--</div>--%>
+        <%--</div>--%>
     </div>
     
     <script type="text/javascript" src="<%=request.getContextPath() %>/resource/js/jquery-1.4.2.min.js"></script>
