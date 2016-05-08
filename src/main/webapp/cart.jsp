@@ -1,8 +1,3 @@
-<%@page import="net.jeeshop.core.front.SystemManager"%>
-<%@page import="net.jeeshop.services.front.product.bean.Product"%>
-<%@page import="net.jeeshop.services.front.product.ProductService"%>
-<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
-<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <!-- tyy2 -->
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="java.util.*"%>
@@ -152,7 +147,7 @@ $(function() {
 //提交订单事件
 function confirmOrder(){
 	var submitFlg = true;
-	
+
 	//如果存在错误，则直接抖动
 	$("input[name='inputBuyNum']").each(function(){
 		var _tips_obj = $(this).parent().find("a[name=stockErrorTips]");
