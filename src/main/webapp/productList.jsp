@@ -170,48 +170,48 @@ function defaultProductImg(){
 
 				<c:if test="${productListTest !=null and productListTest.size() !=0 }">
 					<div class="row" style="margin: 0px;">
-						<div class="col-xs-12">
-							<span class="attr_css" style="margin:5px;font-weight: bold;">排序</span>
-							<c:choose>
-							<c:when test="${orderBy==1 }">
-								<span class="label label-success attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode }" />.html?orderBy=1&attributeID=<c:out escapeXml="false" value="${attributeID}" />">热门</a>
-								</span>
-							</c:when>
-							<c:otherwise>
-								<span class="label attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=1&attributeID=<c:out escapeXml="false" value="${attributeID}" />">热门</a>
-								</span>
-							</c:otherwise>
-							</c:choose>
+						<%--<div class="col-xs-12">--%>
+							<%--<span class="attr_css" style="margin:5px;font-weight: bold;">排序</span>--%>
+							<%--<c:choose>--%>
+							<%--<c:when test="${orderBy==1 }">--%>
+								<%--<span class="label label-success attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode }" />.html?orderBy=1&attributeID=<c:out escapeXml="false" value="${attributeID}" />">热门</a>--%>
+								<%--</span>--%>
+							<%--</c:when>--%>
+							<%--<c:otherwise>--%>
+								<%--<span class="label attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=1&attributeID=<c:out escapeXml="false" value="${attributeID}" />">热门</a>--%>
+								<%--</span>--%>
+							<%--</c:otherwise>--%>
+							<%--</c:choose>--%>
 
-							<c:choose>
-							<c:when test="${orderBy==2 }">
-								<span class="label label-success attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=2&attributeID=<c:out escapeXml="false" value="${attributeID}" />">价格</a>
-								</span>
-							</c:when>
-							<c:otherwise>
-								<span class="label attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=2&attributeID=<c:out escapeXml="false" value="${attributeID}" />">价格</a>
-								</span>
-							</c:otherwise>
-							</c:choose>
+							<%--<c:choose>--%>
+							<%--<c:when test="${orderBy==2 }">--%>
+								<%--<span class="label label-success attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=2&attributeID=<c:out escapeXml="false" value="${attributeID}" />">价格</a>--%>
+								<%--</span>--%>
+							<%--</c:when>--%>
+							<%--<c:otherwise>--%>
+								<%--<span class="label attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${catalogCode}" />.html?orderBy=2&attributeID=<c:out escapeXml="false" value="${attributeID}" />">价格</a>--%>
+								<%--</span>--%>
+							<%--</c:otherwise>--%>
+							<%--</c:choose>--%>
 
-							<c:choose>
-							<c:when test="${orderBy==3 }">
-								<span class="label label-success attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="catalogCode" />.html?orderBy=3&attributeID=<c:out escapeXml="false" value="attributeID" />">最新</a>
-								</span>
-							</c:when>
-							<c:otherwise>
-								<span class="label attr_css" style="margin:5px;">
-									<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="catalogCode" />.html?orderBy=3&attributeID=<c:out escapeXml="false" value="attributeID" />">最新</a>
-								</span>
-							</c:otherwise>
-							</c:choose>
+							<%--<c:choose>--%>
+							<%--<c:when test="${orderBy==3 }">--%>
+								<%--<span class="label label-success attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="catalogCode" />.html?orderBy=3&attributeID=<c:out escapeXml="false" value="attributeID" />">最新</a>--%>
+								<%--</span>--%>
+							<%--</c:when>--%>
+							<%--<c:otherwise>--%>
+								<%--<span class="label attr_css" style="margin:5px;">--%>
+									<%--<a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="catalogCode" />.html?orderBy=3&attributeID=<c:out escapeXml="false" value="attributeID" />">最新</a>--%>
+								<%--</span>--%>
+							<%--</c:otherwise>--%>
+							<%--</c:choose>--%>
 
-						</div>
+						<%--</div>--%>
 					</div>
 					<div ><hr style="clear: both;"></div>
 				</c:if>
