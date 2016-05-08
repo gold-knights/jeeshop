@@ -1,13 +1,6 @@
 <%@page import="net.jeeshop.core.oscache.FrontCache"%>
 <%@page import="net.jeeshop.services.front.attribute.bean.Attribute"%>
-<%@page import="net.jeeshop.services.front.product.bean.Product"%>
-<%@page import="net.jeeshop.services.front.product.ProductService"%>
-<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
-<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <!-- tyy2 -->
-<%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="java.util.*"%>
-<%@page import="net.jeeshop.core.FrontContainer"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <!-- tyy -->
 <%@ taglib uri="http://jsptags.com/tags/navigation/pager" prefix="pg"%>
@@ -174,7 +167,7 @@ function defaultProductImg(){
 				</div>
 
 				<!-- 排序栏 -->
-				<c:if test="${productList !=null and productList.size !=0 }">
+				<c:if test="${productListTest !=null and productListTest.size() !=0 }">
 					<div class="row" style="margin: 0px;">
 						<div class="col-xs-12">
 							<span class="attr_css" style="margin:5px;font-weight: bold;">排序</span>
@@ -226,7 +219,7 @@ function defaultProductImg(){
 				<div class="row">
 					<!-- 商品展示 -->
 					<div >
-					<c:forEach items="${productList}" var="item">
+						<c:forEach items="${productListTest}" var="item">
 					  <div class="col-xs-3" style="padding: 5px;text-align: center;">
 							<div class="thumbnail" style="width: 100%; display: block;">
 								<div style="height: 200px;border: 0px solid;text-align: center;">
@@ -262,7 +255,8 @@ function defaultProductImg(){
 						</div>
 					</c:forEach>
 					</div>
-					<c:if test="${ productList==null or productList.size==0 }">
+
+					<c:if test="${ productListTest==null or productListTest.size()==0 }">
 
 						抱歉，没有找到<font color='#f40'><%=request.getAttribute("key")!=null?request.getAttribute("key").toString():"" %></font>相关的宝贝!
 						<%request.setAttribute("key",null); %>
@@ -285,7 +279,7 @@ function defaultProductImg(){
 				</div>
 				<div class="row" style="margin-top: 10px;">
 					<div class="col-xs-12" style="border: 0px solid;text-align: right;">
-						<c:if test="${ productList!=null and productList.size !=0}">
+						<c:if test="${ productListTest!=null and productListTest.size() !=0}">
 							<%@ include file="pager.jsp"%>
 						</c:if>
 					</div>

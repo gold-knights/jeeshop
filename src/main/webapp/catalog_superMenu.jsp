@@ -1,15 +1,6 @@
-<%@page import="net.jeeshop.core.front.SystemManager" %>
 <%@page import="net.jeeshop.services.front.catalog.bean.Catalog" %>
-<%@page
-        import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@page import="org.springframework.web.context.WebApplicationContext" %>
-<%@page import="java.util.LinkedList" %>
-<!-- tyy2 -->
-<%@page import="org.apache.commons.lang.StringUtils" %>
-<%@page import="java.util.Collections" %>
-<%@page import="net.jeeshop.services.front.news.bean.News" %>
 <%@page import="java.util.List" %>
-<%@page import="net.jeeshop.core.ManageContainer" %>
+<!-- tyy2 -->
 <%@ page contentType="text/html; charset=UTF-8" %>
 <!-- tyy -->
 <%@ taglib uri="http://jsptags.com/tags/navigation/pager" prefix="pg" %>
@@ -24,7 +15,7 @@
         <div class="sidelist">
 			<span>
 				<h3>
-                    <a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${superType.code}" />.html?catalogCode=${superType.code}&attributeID=${superType.id}"><c:out
+                    <a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${superType.code}" />.html?category=${superType.code}&attributeID=${superType.id}"><c:out
                             escapeXml="false" value="${superType.name}"/></a>
                 </h3>
 			</span>
@@ -33,7 +24,7 @@
                 <ul>
                     <c:forEach items="${superType.children}" var="smallType">
                         <li>
-                            <a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${smallType.code}" />.html?catalogCode=${smallType.code}&attributeID=${smallType.id}"><c:out
+                            <a href="<%=request.getContextPath() %>/catalog/<c:out escapeXml="false" value="${smallType.code}" />.html?category=${smallType.code}&attributeID=${smallType.id}"><c:out
                                     escapeXml="false" value="${smallType.name}"/></a>
                         </li>
                     </c:forEach>
