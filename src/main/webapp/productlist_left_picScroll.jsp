@@ -34,45 +34,45 @@
 
 		</style>
 
-		<div class="picScroll-top">
-			<div class="hd"><b>热门推荐</b>
-				<a class="next"></a>
-				<ul></ul>
-				<a class="prev"></a>
-				<span class="pageState"></span>
-			</div>
-			<div class="bd">
-				<ul class="picList">
-					<%
-					Object _code = request.getAttribute("catalogCode");
-					String _codeStr = null;
-					if(_code!=null){
-						_codeStr = _code.toString();
-					}
-					application.setAttribute("hotProducts", SystemManager.getInstance().getProductsByCatalogCode(_codeStr));
-					%>
-					
-					 <c:forEach items="${applicationScope.hotProducts}" var="row">  
-					  <li class="row col-xs-12">
-							<div class="pic"><a href="<%=request.getContextPath() %>/product/<c:out escapeXml="false" value="${row.id}" />.html" target="_blank">
-								<img border="0" style="margin: auto;" src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${row.picture}" />" /></a>
-							</div>
-							<div class="left_title" style="text-align: center;">
-								<a href="http://www.SuperSlide2.com" target="_blank" style="margin: auto;text-align: center;" title="<c:out escapeXml="false" value="${row.name}"/>">
-									<c:out escapeXml="false" value="${row.name}"/>
-								</a>
-							</div>
-							<div class="left_title" style="text-align: center;">
-								<b style="font-weight: bold;color: #cc0000;">
-									￥<c:out escapeXml="false" value="${row.nowPrice}" />
-								</b>
-								<b style="text-decoration: line-through;font-weight: normal;font-size: 11px;color: #a5a5a5;margin-left: 20px;">
-									￥<c:out escapeXml="false" value="${row.price}" />
-								</b>
-							</div>
-						</li>
-					 </c:forEach>
-				</ul>
-			</div>
-		</div>
+		<%--<div class="picScroll-top">--%>
+			<%--<div class="hd"><b>热门推荐</b>--%>
+				<%--<a class="next"></a>--%>
+				<%--<ul></ul>--%>
+				<%--<a class="prev"></a>--%>
+				<%--<span class="pageState"></span>--%>
+			<%--</div>--%>
+			<%--<div class="bd">--%>
+				<%--<ul class="picList">--%>
+					<%--<%--%>
+					<%--Object _code = request.getAttribute("catalogCode");--%>
+					<%--String _codeStr = null;--%>
+					<%--if(_code!=null){--%>
+						<%--_codeStr = _code.toString();--%>
+					<%--}--%>
+					<%--application.setAttribute("hotProducts", SystemManager.getInstance().getProductsByCatalogCode(_codeStr));--%>
+					<%--%>--%>
+					<%----%>
+					 <%--<c:forEach items="${applicationScope.hotProducts}" var="row">  --%>
+					  <%--<li class="row col-xs-12">--%>
+							<%--<div class="pic"><a href="<%=request.getContextPath() %>/product/<c:out escapeXml="false" value="${row.id}" />.html" target="_blank">--%>
+								<%--<img border="0" style="margin: auto;" src="<%=SystemManager.systemSetting.getImageRootPath()%><c:out escapeXml="false" value="${row.picture}" />" /></a>--%>
+							<%--</div>--%>
+							<%--<div class="left_title" style="text-align: center;">--%>
+								<%--<a href="http://www.SuperSlide2.com" target="_blank" style="margin: auto;text-align: center;" title="<c:out escapeXml="false" value="${row.name}"/>">--%>
+									<%--<c:out escapeXml="false" value="${row.name}"/>--%>
+								<%--</a>--%>
+							<%--</div>--%>
+							<%--<div class="left_title" style="text-align: center;">--%>
+								<%--<b style="font-weight: bold;color: #cc0000;">--%>
+									<%--￥<c:out escapeXml="false" value="${row.nowPrice}" />--%>
+								<%--</b>--%>
+								<%--<b style="text-decoration: line-through;font-weight: normal;font-size: 11px;color: #a5a5a5;margin-left: 20px;">--%>
+									<%--￥<c:out escapeXml="false" value="${row.price}" />--%>
+								<%--</b>--%>
+							<%--</div>--%>
+						<%--</li>--%>
+					 <%--</c:forEach>--%>
+				<%--</ul>--%>
+			<%--</div>--%>
+		<%--</div>--%>
 
